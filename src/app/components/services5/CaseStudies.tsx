@@ -138,7 +138,7 @@ const CaseStudies = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="case" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-gray-900 mb-4 ">Case Studies</h2>
         <p className="text-xl text-gray-500 mb-16  max-w-4xl">Real-world success stories demonstrating measurable impact and transformation through Microsoft 365 support.</p>

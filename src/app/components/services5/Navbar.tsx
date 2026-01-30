@@ -33,7 +33,7 @@ const Navbar = () => {
           <div className="hidden md:flex gap-8 items-center font-medium">
             <a href="#services" className="text-gray-700 hover:text-blue-600 transition">Services</a>
             <a href="#case" className="text-gray-700 hover:text-blue-600 transition">Case Studies</a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-600 transition">FAQs</a>
+            <a href="#faqs" className="text-gray-700 hover:text-blue-600 transition">FAQs</a>
             <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:shadow-lg transition transform hover:scale-105">
               Contact Us
             </button>
