@@ -17,8 +17,8 @@ export default function HeroSection() {
               Comprehensive enterprise Microsoft 365 support designed for American businesses. From cloud migration and security to 24/7 managed services.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-semibold hover:shadow-blue transition transform hover:scale-105">Get Started</button>
-              <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition">Learn More</button>
+              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-semibold hover:shadow-blue cursor-pointer transition transform hover:scale-105">Get Started</button>
+              <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition cursor-pointer">Learn More</button>
             </div>
           </div>
           <div className="relative animate-slide-in-left">
@@ -36,26 +36,32 @@ export default function HeroSection() {
         </div>
 
         {/* Meta Stats Bar */}
-        <div className="mt-20 pt-8 border-t border-blue-200 grid grid-cols-2 md:grid-cols-3 gap-24 text-center">
-          <div>
-            <p className="text-xs text-gray-500 tracking-widest">Published</p>
-            <p className="font-medium text-gray-700">Jan 24, 2026</p>
-          </div>
-          <div>
-            <p className="text-xs text-gray-500 tracking-widest">Expert Review Rating</p>
-            <div className="flex justify-center mb-1"> 
-            <Star className="w-6 h-6 text-yellow-300 fill-yellow-300" />
-            <Star className="w-6 h-6 text-yellow-300 fill-yellow-300" />
-            <Star className="w-6 h-6 text-yellow-300 fill-yellow-300" />
-            <Star className="w-6 h-6 text-yellow-300 fill-yellow-300" />
-            <Star className="w-6 h-6 text-yellow-300 fill-yellow-300" />
+        <div className="mt-12 md:mt-20 pt-8 border-t border-blue-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-24 text-center">
+
+            {/* Date Column */}
+            <div className="flex flex-col items-center">
+              <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest mb-1">Published</p>
+              <p className="font-medium text-gray-700">Jan 24, 2026</p>
             </div>
-            <p className="font-medium text-gray-700">4.8/5(1,2050 reviews)</p>
+
+            {/* Rating Column */}
+            <div className="flex flex-col items-center">
+              <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest mb-1">Expert Review Rating</p>
+              <div className="flex justify-center mb-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="font-medium text-gray-700 text-sm md:text-base">4.8/5 (12,050 reviews)</p>
+            </div>
+
+            {/* Expertise Column - Spans full width on small mobile if needed */}
+            <div className="flex flex-col items-center sm:col-span-2 md:col-span-1">
+              <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest mb-1">Expertise</p>
+              <p className="font-medium text-blue-600">Enterprise Level</p>
+            </div>s
           </div>
-          <div>
-            <p className="text-xs text-gray-500 tracking-widest">Expertise</p>
-            <p className="font-medium text-blue-600">Enterprise Level</p>
-          </div> 
         </div>
       </div>
     </section>

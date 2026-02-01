@@ -92,6 +92,7 @@ const page = () => {
       <meta name="twitter:site" content="@GladiuseSport" />
       <meta name="twitter:creator" content="@GladiuseSport" />
       {/* --- END SEO SECTION --- */}
+      
       <TierTwoSchema />
       <main className='bg-blue-50'>
         {/* Disclaimer bar */}

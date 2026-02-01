@@ -10,10 +10,10 @@ const CTA = () => {
             Let our expert Tier-2 team handle your complex infrastructure challenges and drive operational excellence.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-blue-700 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition transform hover:scale-105">
+            <button className="bg-white text-blue-700 px-8 py-3 cursor-pointer rounded-lg font-medium hover:bg-blue-50 transition transform hover:scale-105">
               Request Consultation
             </button>
-            <button className="bg-transparent border-2 border-white backdrop-blur-sm px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition">
+            <button className="bg-transparent border-2 cursor-pointer border-white backdrop-blur-sm px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition">
               View Pricing
             </button>
           </div>

@@ -14,8 +14,8 @@ export default function HeroSection() {
             <p className="text-[17px] text-slate-700 font-light mb-8 leading-8">
               Expert second-line technical support for US businesses. Our certified Tier-2 specialists handle complex escalations, advanced troubleshooting, and system optimization. We resolve critical infrastructure issues and provide specialized support for enterprise systems with 24/7 availability and rapid resolution times.</p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:scale-105 transition-all">Schedule Demo</button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all">Learn More</button>
+              <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg cursor-pointer hover:scale-105 transition-all">Schedule Demo</button>
+              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold cursor-pointer hover:bg-blue-50 transition-all">Learn More</button>
             </div>
           </div>
 

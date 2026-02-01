@@ -11,10 +11,10 @@ const CTA = () => {
 
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-blue-500 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition transform hover:scale-105">
+            <button className="bg-white text-blue-500 cursor-pointer px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition transform hover:scale-105">
               Schedule Consultation
             </button>
-            <button className="bg-transparent border-2 border-white backdrop-blur-sm px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition">
+            <button className="bg-transparent border-2 cursor-pointer border-white backdrop-blur-sm px-8 py-3 rounded-lg font-medium hover:bg-white/10 transition">
               Download Guide
             </button>
           </div>
