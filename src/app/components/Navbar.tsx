@@ -16,14 +16,14 @@ const services: ServiceItem[] = [
   {
     icon: <Headphones className="w-5 h-5" />,
     title: "Help Desk Support",
-    description: "Tier-1 & Tier-2 technical support",
-     href: "/services/tier-1-help-desk",
+    description: "Tier-1 technical support",
+    href: "/services/tier-1-help-desk",
   },
   {
     icon: <Headphones className="w-5 h-5" />,
     title: "Help Desk Support",
     description: "Tier-2 technical support",
-     href: "/services/tier-2-technical-support",
+    href: "/services/tier-2-technical-support",
   },
   {
     icon: <Cloud className="w-5 h-5" />,
@@ -93,26 +93,25 @@ export default function Navbar() {
 
       {/* Header */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white shadow-sm"
-        }`}
+        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white shadow-sm"
+          }`}
       >
         <nav className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-             < Link href="#">
-            <div className="text-2xl font-bold">   
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                IT Support Pro
-              </span>
-            </div>
+            < Link href="#">
+              <div className="text-2xl font-bold">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  IT Support Pro
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
               {/* Services Dropdown */}
               <div ref={servicesRef} className="relative">
-                
+
                 <button
                   onClick={() => setIsServicesOpen((v) => !v)}
                   className="flex items-center gap-1 hover:text-blue-600 transition-colors"
@@ -181,7 +180,7 @@ export default function Navbar() {
                 <div className="font-semibold text-gray-900 px-3 py-2">Services</div>
 
                 {services.map((service, idx) => (
-                  <Link 
+                  <Link
                     key={idx}
                     href={service.href}
                     className="flex items-center gap-3 px-3 py-2 hover:bg-blue-50 rounded-lg transition-colors"
