@@ -12,8 +12,78 @@ import Testimonials from "../../components/services4/Testimonials"
 import FAQ from "../../components/services4/FAQ"
 import Contact from "../../components/services4/Contact"
 import Disclaimer from "../../components/services4/Disclaimer"
-
 import {Building2, Hospital, University, GraduationCap, ShoppingCart, Cog,} from "lucide-react";
+import type { Metadata } from "next";
+import NetworkSupportSchema from '@/app/components/services4/NetworkSupportSchema'
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.gladiusesport.com"),
+
+  title:
+    "Network Support Services USA | VPN Troubleshooting & Secure Access Support",
+
+  description:
+    "GladiuseSport provides network support services in the USA, specializing in VPN troubleshooting, secure remote access, network connectivity issues, and user access resolution for businesses.",
+
+  keywords: [
+    "Network Support Services USA",
+    "VPN Troubleshooting Services",
+    "Secure Network Access Support",
+    "Remote Access Issues",
+    "Business VPN Support",
+    "Network Connectivity Solutions",
+  ],
+
+  authors: [{ name: "GladiuseSport" }],
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical:
+      "https://www.gladiusesport.com/services/network-support-services-usa/",
+  },
+
+  openGraph: {
+    title: "Network & VPN Troubleshooting Support for US Businesses",
+    description:
+      "Resolve VPN, network access, and remote connectivity problems with GladiuseSport’s network support services, helping US businesses maintain secure and uninterrupted access.",
+    url: "https://www.gladiusesport.com/services/network-support-services-usa/",
+    siteName: "GladiuseSport",
+    type: "website",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/network-support-services-usa.webp",
+        width: 1200,
+        height: 630,
+        alt: "Network Support and VPN Troubleshooting Services USA",
+        type: "image/webp",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@GladiuseSport",
+    creator: "@GladiuseSport",
+    title: "VPN & Network Support Services in the USA",
+    description:
+      "Get expert network support from GladiuseSport for VPN errors, remote access failures, and secure business connectivity across the USA.",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/network-support-services-usa.webp",
+        alt: "VPN Troubleshooting and Network Support Services USA",
+      },
+    ],
+  },
+
+  other: {
+    "og:updated_time": "2026-01-01T00:00:00+00:00",
+  },
+};
+
 
 
 const page = () => {
@@ -34,6 +104,7 @@ const ORGS: readonly Org[] = [
 ] as const;
   return (
     <>
+    <NetworkSupportSchema />
     <Navbar />
     <Hero />
     <OverView />

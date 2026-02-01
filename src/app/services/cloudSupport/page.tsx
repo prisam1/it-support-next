@@ -8,12 +8,84 @@ import CaseStudy from "../../components/services3/CaseStudies"
 import Testimonials from "../../components/services3/Testimonials"
 import FAQ from "../../components/services3/FAQ"
 import Contact from "../../components/services3/Contact"
+import type { Metadata } from "next";
+import CloudSupportSchema from '@/app/components/services3/CloudSupportSchema'
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.gladiusesport.com"),
+
+  title: "Cloud Support Services USA | Managed Cloud IT Support for Businesses",
+
+  description:
+    "GladiuseSport delivers cloud support services in the USA, helping businesses manage, monitor, and optimize cloud environments with secure, scalable, and reliable IT solutions.",
+
+  keywords: [
+    "Cloud Support Services USA",
+    "Managed Cloud Support",
+    "Cloud IT Services",
+    "Business Cloud Support",
+    "AWS Azure Cloud Support",
+    "Cloud Infrastructure Management",
+  ],
+
+  authors: [{ name: "GladiuseSport" }],
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical:
+      "https://www.gladiusesport.com/services/cloud-support-services-usa/",
+  },
+
+  openGraph: {
+    title: "Reliable Cloud Support Solutions for US Businesses",
+    description:
+      "GladiuseSport provides expert cloud support services to US organizations, ensuring performance, security, and continuity across public and hybrid cloud platforms.",
+    url: "https://www.gladiusesport.com/services/cloud-support-services-usa/",
+    siteName: "GladiuseSport",
+    type: "website",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/cloud-support-services-usa.webp",
+        width: 1200,
+        height: 630,
+        alt: "Cloud Support and Managed Cloud Services for US Businesses",
+        type: "image/webp",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@GladiuseSport",
+    creator: "@GladiuseSport",
+    title: "Expert Cloud Support Services for Growing US Companies",
+    description:
+      "Get professional cloud support from GladiuseSport, delivering monitoring, troubleshooting, and optimization for business-critical cloud environments across the USA.",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/cloud-support-services-usa.webp",
+        alt: "Managed Cloud Support Services USA",
+      },
+    ],
+  },
+
+  other: {
+    "og:updated_time": "2026-01-01T00:00:00+00:00",
+  },
+};
+
+
 const TOOLS: readonly string[] = [ "Microsoft 365",  "Azure",  "Exchange Online", "SharePoint", "Teams", "Power Platform", "Intune","OneDrive","Defender", "PowerShell","Sentinel","Entra ID",] as const;
 
 const BRANDS: readonly string[] = ["HealthTech", "Pacific Bank","GreenBuild","Summit Legal","Riverside Academy","TechStart Inc",] as const;
 const page = () => {
   return (
     <>
+    <CloudSupportSchema/>
     <Navbar />
     <Hero />
     <Services />

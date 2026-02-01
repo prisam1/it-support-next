@@ -9,6 +9,7 @@ import MarketDataTables from '@/app/components/services5/MarketDataTables'
 import IndustriesSection from '@/app/components/services5/IndustriesSection'
 import Tools from '@/app/components/services5/Tools'
 import CTA from '@/app/components/services5/CTA'
+import MicrosoftSchema from '@/app/components/services5/MicrosoftSchema'
 
 
 
@@ -48,6 +49,8 @@ const page = () => {
   }
 
   return (
+    <> 
+    <MicrosoftSchema />
     <main className='bg-blue-50' >
       <Navbar />
       <Hero />
@@ -60,6 +63,7 @@ const page = () => {
       <FAQSection />
       <CTA/>
     </main>
+    </>
   )
 }
 
