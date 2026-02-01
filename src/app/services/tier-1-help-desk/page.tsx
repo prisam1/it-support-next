@@ -13,75 +13,7 @@ import WhyChooseUs from "../../components/services1/WhyChooseUS"
 import FAQ from "../../components/services1/FAQ"
 import CallToAction from "../../components/services1/CallAction"
 import TierOneSchema from '@/app/components/services1/TierOneSchema';
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.gladiusesport.com"),
-
-  title:
-    "Tier 1 Help Desk Services USA | First-Level IT Support for Businesses",
-
-  description:
-    "GladiuseSport offers Tier 1 help desk services in the USA, providing fast first-level IT support, issue resolution, and user assistance for small and medium-sized businesses.",
-
-  keywords: [
-    "Tier 1 Help Desk Services USA",
-    "Level 1 IT Support",
-    "IT Help Desk USA",
-    "First Line IT Support",
-    "Business Help Desk Services",
-    "Managed IT Support",
-  ],
-
-  authors: [{ name: "GladiuseSport" }],
-
-  robots: {
-    index: true,
-    follow: true,
-  },
-
-  alternates: {
-    canonical:
-      "https://www.gladiusesport.com/services/tier-1-help-desk-services-usa/",
-  },
-
-  openGraph: {
-    title: "Tier 1 Help Desk Support Services for US Businesses",
-    description:
-      "Ensure quick response and efficient issue handling with GladiuseSport’s Tier 1 help desk services, designed to support end users and minimize downtime across US organizations.",
-    url: "https://www.gladiusesport.com/services/tier-1-help-desk-services-usa/",
-    siteName: "GladiuseSport",
-    type: "website",
-    images: [
-      {
-        url: "https://www.gladiusesport.com/assets/img/tier-1-help-desk-services.webp",
-        width: 1200,
-        height: 630,
-        alt: "Tier 1 Help Desk and First-Level IT Support Services USA",
-        type: "image/webp",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    site: "@GladiuseSport",
-    creator: "@GladiuseSport",
-    title: "Fast Tier 1 Help Desk Support for US Companies",
-    description:
-      "Get responsive Tier 1 help desk support from GladiuseSport, delivering reliable first-contact IT assistance and user support for businesses across the USA.",
-    images: [
-      {
-        url: "https://www.gladiusesport.com/assets/img/tier-1-help-desk-services.webp",
-        alt: "Tier 1 IT Help Desk Services USA",
-      },
-    ],
-  },
-
-  other: {
-    "og:updated_time": "2026-01-01T00:00:00+00:00",
-  },
-};
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -96,17 +28,48 @@ export default function Header() {
 
   return (
     <>
-    <TierOneSchema/>
+      {/*  SEO SECTION START --- */}
+      <title>Tier 1 Help Desk Services USA | Fast Level 1 IT Support</title>
+      {/* General Meta Tags */}
+      <meta name="description" content="GladiuseSport offers Tier 1 help desk services in the USA, providing fast first-level IT support, issue resolution, and user assistance for small and medium-sized businesses." />
+      <meta name="keywords" content="Tier 1 Help Desk Services USA, Level 1 IT Support, IT Help Desk USA, First Line IT Support, Business Help Desk Services, Managed IT Support" />
+      <meta name="author" content="GladiuseSport" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://www.gladiusesport.com/services/tier-1-help-desk-services-usa/" />
+
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content="Tier 1 Help Desk Support Services for US Businesses" />
+      <meta property="og:description" content="Ensure quick response and efficient issue handling with GladiuseSport’s Tier 1 help desk services, designed to support end users and minimize downtime across US organizations." />
+      <meta property="og:url" content="https://www.gladiusesport.com/services/tier-1-help-desk-services-usa/" />
+      <meta property="og:site_name" content="GladiuseSport" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://www.gladiusesport.com/assets/img/tier-1-help-desk-services.webp" />
+      <meta property="og:image:alt" content="Tier 1 Help Desk and First-Level IT Support Services USA" />
+      <meta property="og:image:type" content="image/webp" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:updated_time" content="2026-01-01T00:00:00+00:00" />
+
+      {/*Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content="https://www.gladiusesport.com/services/tier-1-help-desk-services-usa/" />
+      <meta name="twitter:title" content="Fast Tier 1 Help Desk Support for US Companies" />
+      <meta name="twitter:description" content="Get responsive Tier 1 help desk support from GladiuseSport, delivering reliable first-contact IT assistance and user support for businesses across the USA." />
+      <meta name="twitter:image" content="https://www.gladiusesport.com/assets/img/tier-1-help-desk-services.webp" />
+      <meta name="twitter:image:alt" content="Tier 1 IT Help Desk Services USA" />
+      <meta name="twitter:site" content="@GladiuseSport" />
+      <meta name="twitter:creator" content="@GladiuseSport" />
+      <TierOneSchema />
       <nav className="bg-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href= "/" >
-            <div className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                TechSupport Pro
-              </span>
-            </div>
+            <Link href="/" >
+              <div className="flex items-center">
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  TechSupport Pro
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -115,11 +78,10 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition ${
-                    link.special
-                      ? 'text-red-600 hover:text-red-700 font-semibold'
-                      : 'text-gray-700 hover:text-blue-600'
-                  }`}
+                  className={`transition ${link.special
+                    ? 'text-red-600 hover:text-red-700 font-semibold'
+                    : 'text-gray-700 hover:text-blue-600'
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -151,11 +113,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block py-2 transition ${
-                    link.special
-                      ? 'text-red-600 hover:text-red-700 font-semibold'
-                      : 'text-gray-700 hover:text-blue-600'
-                  }`}
+                  className={`block py-2 transition ${link.special
+                    ? 'text-red-600 hover:text-red-700 font-semibold'
+                    : 'text-gray-700 hover:text-blue-600'
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -182,68 +143,68 @@ export default function Header() {
       </div>
 
       {/* Hero Section  */}
-       <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white py-20 overflow-hidden">
-      {/* Animated Background Blobs */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
+      <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white py-20 overflow-hidden">
+        {/* Animated Background Blobs */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-300 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center animate-fade-in-up">
-          {/* Rating Badge */}
-          <div className="mb-4 flex items-center justify-center gap-2">
-            <span className="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
-              ★★★★★ 4.9/5
-            </span>
-            <span className="text-white text-sm">(2,847 reviews)</span>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center animate-fade-in-up">
+            {/* Rating Badge */}
+            <div className="mb-4 flex items-center justify-center gap-2">
+              <span className="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
+                ★★★★★ 4.9/5
+              </span>
+              <span className="text-white text-sm">(2,847 reviews)</span>
+            </div>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Outsourced Tier-1 Help Desk Services for US Businesses
-          </h1>
+            {/* Main Heading */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Outsourced Tier-1 Help Desk Services for US Businesses
+            </h1>
 
-          {/* Description */}
-          <p className="text-xl md:text-2xl mb-4 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive technical support solutions delivered by certified professionals. 
-            We handle frontline IT issues so your team can focus on strategic initiatives. 
-            Available 24/7/365 with industry-leading response times and multilingual support 
-            across all major platforms and technologies.
-          </p>
+            {/* Description */}
+            <p className="text-xl md:text-2xl mb-4 max-w-4xl mx-auto leading-relaxed">
+              Comprehensive technical support solutions delivered by certified professionals.
+              We handle frontline IT issues so your team can focus on strategic initiatives.
+              Available 24/7/365 with industry-leading response times and multilingual support
+              across all major platforms and technologies.
+            </p>
 
-          {/* Metadata Tags */}
-          <div className="flex flex-wrap gap-2 justify-center text-sm  text-gray-500 mb-8">
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
-              Published: January 10, 2026
-            </span>
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
-              Last Updated: January 14, 2026
-            </span>
-            <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
-              Expert Reviewed ✓
-            </span>
-          </div>
+            {/* Metadata Tags */}
+            <div className="flex flex-wrap gap-2 justify-center text-sm  text-gray-500 mb-8">
+              <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
+                Published: January 10, 2026
+              </span>
+              <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
+                Last Updated: January 14, 2026
+              </span>
+              <span className="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
+                Expert Reviewed ✓
+              </span>
+            </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 shadow-lg"
-            >
-              Get Free Consultation
-            </Link>
-            <Link
-              href="#case-studies"
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition transform hover:scale-105"
-            >
-              View Case Studies
-            </Link>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 shadow-lg"
+              >
+                Get Free Consultation
+              </Link>
+              <Link
+                href="#case-studies"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition transform hover:scale-105"
+              >
+                View Case Studies
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      <style jsx>{`
+        <style jsx>{`
         @keyframes fade-in-up {
           from {
             opacity: 0;
@@ -259,7 +220,7 @@ export default function Header() {
           animation: fade-in-up 0.8s ease-out;
         }
       `}</style>
-    </section>
+      </section>
       {/* Hero section end  */}
       <Role />
       <Services />

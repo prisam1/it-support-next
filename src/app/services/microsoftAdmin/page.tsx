@@ -10,77 +10,7 @@ import MarketDataTables from '@/app/components/services5/MarketDataTables'
 import IndustriesSection from '@/app/components/services5/IndustriesSection'
 import Tools from '@/app/components/services5/Tools'
 import CTA from '@/app/components/services5/CTA'
-import MicrosoftSchema from '@/app/components/services5/MicrosoftSchema'
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.gladiusesport.com"),
-
-  title: "Microsoft 365 Support Services USA | Expert Office 365 Assistance",
-
-  description:
-    "GladiuseSport offers professional Microsoft 365 support services in the USA, helping businesses with setup, account administration, licensing, troubleshooting, email configuration, and user training.",
-
-  keywords: [
-    "Microsoft 365 Support Services USA",
-    "Office 365 Support",
-    "Microsoft 365 Helpdesk USA",
-    "M365 Troubleshooting",
-    "Exchange Online Support",
-    "Teams & SharePoint Assistance",
-  ],
-
-  authors: [{ name: "GladiuseSport" }],
-
-  robots: {
-    index: true,
-    follow: true,
-  },
-
-  alternates: {
-    canonical:
-      "https://www.gladiusesport.com/services/microsoft-365-support-services-usa/",
-  },
-
-  openGraph: {
-    title: "Professional Microsoft 365 Support Services for US Businesses",
-    description:
-      "Get reliable Microsoft 365 support from GladiuseSport, including setup, troubleshooting, security configuration, and user assistance for businesses across the USA.",
-    url: "https://www.gladiusesport.com/services/microsoft-365-support-services-usa/",
-    siteName: "GladiuseSport",
-    type: "website",
-    images: [
-      {
-        url: "https://www.gladiusesport.com/assets/img/microsoft-365-support-services-usa.webp",
-        width: 1200,
-        height: 630,
-        alt: "Microsoft 365 Support and Office 365 Assistance Services USA",
-        type: "image/webp",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    site: "@GladiuseSport",
-    creator: "@GladiuseSport",
-    title: "Trusted Microsoft 365 Support Across the USA",
-    description:
-      "Explore expert Microsoft 365 support from GladiuseSport, covering installation, licensing, Teams, SharePoint, Exchange Online, and end-user support for US businesses.",
-    images: [
-      {
-        url: "https://www.gladiusesport.com/assets/img/microsoft-365-support-services-usa.webp",
-        alt: "M365 Support Services for US Businesses",
-      },
-    ],
-  },
-
-  other: {
-    "og:updated_time": "2026-01-01T00:00:00+00:00",
-  },
-};
-
-
+import MicrosoftSchema from '@/app/components/services5/MicrosoftSchema' 
 
 
 const page = () => {
@@ -119,6 +49,37 @@ const page = () => {
 
   return (
     <> 
+    {/* --- SEO & META SECTION --- */}
+    <title>Microsoft 365 Support Services USA | Expert Office 365 Assistance</title>
+      <meta name="description" content="GladiuseSport offers professional Microsoft 365 support services in the USA, helping businesses with setup, account administration, licensing, troubleshooting, email configuration, and user training." />
+      <meta name="keywords" content="Microsoft 365 Support Services USA, Office 365 Support, Microsoft 365 Helpdesk USA, M365 Troubleshooting, Exchange Online Support, Teams & SharePoint Assistance" />
+      <meta name="author" content="GladiuseSport" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://www.gladiusesport.com/services/microsoft-365-support-services-usa/" />
+
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content="Professional Microsoft 365 Support Services for US Businesses" />
+      <meta property="og:description" content="Get reliable Microsoft 365 support from GladiuseSport, including setup, troubleshooting, security configuration, and user assistance for businesses across the USA." />
+      <meta property="og:url" content="https://www.gladiusesport.com/services/microsoft-365-support-services-usa/" />
+      <meta property="og:site_name" content="GladiuseSport" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://www.gladiusesport.com/assets/img/microsoft-365-support-services-usa.webp" />
+      <meta property="og:image:alt" content="Microsoft 365 Support and Office 365 Assistance Services USA" />
+      <meta property="og:image:type" content="image/webp" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:updated_time" content="2026-01-01T00:00:00+00:00" />
+
+      {/* Twitter Card Meta Tags - All 8 Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content="https://www.gladiusesport.com/services/microsoft-365-support-services-usa/" />
+      <meta name="twitter:title" content="Trusted Microsoft 365 Support Across the USA" />
+      <meta name="twitter:description" content="Explore expert Microsoft 365 support from GladiuseSport, covering installation, licensing, Teams, SharePoint, Exchange Online, and end-user support for US businesses." />
+      <meta name="twitter:image" content="https://www.gladiusesport.com/assets/img/microsoft-365-support-services-usa.webp" />
+      <meta name="twitter:image:alt" content="M365 Support Services for US Businesses" />
+      <meta name="twitter:site" content="@GladiuseSport" />
+      <meta name="twitter:creator" content="@GladiuseSport" />
+      {/* --- END SEO SECTION --- */}
     <MicrosoftSchema />
     <main className='bg-blue-50' >
       <Navbar />
