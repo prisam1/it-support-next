@@ -12,6 +12,76 @@ import Testimonials from "../../components/services1/Testimonials"
 import WhyChooseUs from "../../components/services1/WhyChooseUS"
 import FAQ from "../../components/services1/FAQ"
 import CallToAction from "../../components/services1/CallAction"
+import TierOneSchema from '@/app/components/services1/TierOneSchema';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.gladiusesport.com"),
+
+  title:
+    "Tier 1 Help Desk Services USA | First-Level IT Support for Businesses",
+
+  description:
+    "GladiuseSport offers Tier 1 help desk services in the USA, providing fast first-level IT support, issue resolution, and user assistance for small and medium-sized businesses.",
+
+  keywords: [
+    "Tier 1 Help Desk Services USA",
+    "Level 1 IT Support",
+    "IT Help Desk USA",
+    "First Line IT Support",
+    "Business Help Desk Services",
+    "Managed IT Support",
+  ],
+
+  authors: [{ name: "GladiuseSport" }],
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical:
+      "https://www.gladiusesport.com/services/tier-1-help-desk-services-usa/",
+  },
+
+  openGraph: {
+    title: "Tier 1 Help Desk Support Services for US Businesses",
+    description:
+      "Ensure quick response and efficient issue handling with GladiuseSport’s Tier 1 help desk services, designed to support end users and minimize downtime across US organizations.",
+    url: "https://www.gladiusesport.com/services/tier-1-help-desk-services-usa/",
+    siteName: "GladiuseSport",
+    type: "website",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/tier-1-help-desk-services.webp",
+        width: 1200,
+        height: 630,
+        alt: "Tier 1 Help Desk and First-Level IT Support Services USA",
+        type: "image/webp",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@GladiuseSport",
+    creator: "@GladiuseSport",
+    title: "Fast Tier 1 Help Desk Support for US Companies",
+    description:
+      "Get responsive Tier 1 help desk support from GladiuseSport, delivering reliable first-contact IT assistance and user support for businesses across the USA.",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/tier-1-help-desk-services.webp",
+        alt: "Tier 1 IT Help Desk Services USA",
+      },
+    ],
+  },
+
+  other: {
+    "og:updated_time": "2026-01-01T00:00:00+00:00",
+  },
+};
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,6 +96,7 @@ export default function Header() {
 
   return (
     <>
+    <TierOneSchema/>
       <nav className="bg-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">

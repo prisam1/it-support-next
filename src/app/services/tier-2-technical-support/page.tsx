@@ -15,6 +15,76 @@ import CaseStudies from '@/app/components/services2/CaseStudies';
 import Testimonials from '@/app/components/services2/Testimonials';
 import FAQ from '@/app/components/services2/FAQ';
 import CTA from '@/app/components/services2/CTA';
+import type { Metadata } from "next";
+import TierTwoSchema from '@/app/components/services2/TierTwoSchema';
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.gladiusesport.com"),
+
+  title:
+    "Tier 2 Help Desk Services USA | Advanced IT Support for Businesses",
+
+  description:
+    "GladiuseSport provides Tier 2 help desk services in the USA, delivering advanced technical support, root-cause analysis, and issue escalation resolution for business IT environments.",
+
+  keywords: [
+    "Tier 2 Help Desk Services USA",
+    "Level 2 IT Support",
+    "Advanced IT Help Desk",
+    "IT Escalation Support USA",
+    "Business IT Support Services",
+    "Managed Help Desk",
+  ],
+
+  authors: [{ name: "GladiuseSport" }],
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical:
+      "https://www.gladiusesport.com/services/tier-2-help-desk-services-usa/",
+  },
+
+  openGraph: {
+    title: "Advanced Tier 2 Help Desk Support for US Organizations",
+    description:
+      "Resolve complex technical issues with GladiuseSport’s Tier 2 help desk services, offering in-depth troubleshooting and expert-level IT support for US businesses.",
+    url: "https://www.gladiusesport.com/services/tier-2-help-desk-services-usa/",
+    siteName: "GladiuseSport",
+    type: "website",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/tier-2-help-desk-services.webp",
+        width: 1200,
+        height: 630,
+        alt: "Tier 2 Help Desk and Advanced IT Support Services USA",
+        type: "image/webp",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@GladiuseSport",
+    creator: "@GladiuseSport",
+    title: "Expert Tier 2 IT Help Desk Support Across the USA",
+    description:
+      "Access professional Tier 2 help desk support from GladiuseSport, specializing in advanced troubleshooting and escalation handling for business IT systems.",
+    images: [
+      {
+        url: "https://www.gladiusesport.com/assets/img/tier-2-help-desk-services.webp",
+        alt: "Tier 2 IT Help Desk Services USA",
+      },
+    ],
+  },
+
+  other: {
+    "og:updated_time": "2026-01-01T00:00:00+00:00",
+  },
+};
 
 
 
@@ -61,7 +131,9 @@ const page = () => {
     }
   }
 
-  return (
+  return ( 
+    <>
+    <TierTwoSchema/>
     <main className='bg-blue-50'>
         {/* Disclaimer bar */}
         <div className="border-b-2 border-yellow-200 bg-yellow-50 py-2 px-4">
@@ -168,6 +240,7 @@ const page = () => {
       <FAQ />
       <CTA />
     </main>
+    </>
   )
 }
 
