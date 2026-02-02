@@ -2,7 +2,7 @@
 import React from 'react'
 import Navbar from "../../components/services5/Navbar"
 import Hero from "../../components/services5/Hero"
-import WhatWeDo from '@/app/components/services5/WhatWeDo' 
+import WhatWeDo from '@/app/components/services5/WhatWeDo'
 import M365Services from '@/app/components/services5/M365Services'
 import CaseStudiesAndIndustries from '@/app/components/services5/CaseStudies'
 import FAQSection from '@/app/components/services5/FAQSection'
@@ -10,7 +10,7 @@ import MarketDataTables from '@/app/components/services5/MarketDataTables'
 import IndustriesSection from '@/app/components/services5/IndustriesSection'
 import Tools from '@/app/components/services5/Tools'
 import CTA from '@/app/components/services5/CTA'
-import MicrosoftSchema from '@/app/components/services5/MicrosoftSchema' 
+import MicrosoftSchema from '@/app/components/services5/MicrosoftSchema'
 
 
 const page = () => {
@@ -48,9 +48,9 @@ const page = () => {
   }
 
   return (
-    <> 
-    {/* --- SEO & META SECTION --- */}
-    <title>Microsoft 365 Support Services USA | Expert Office 365 Assistance</title>
+    <>
+      {/* --- SEO & META SECTION --- */}
+      <title>Microsoft 365 Support Services USA | Expert Office 365 Assistance</title>
       <meta name="description" content="GladiuseSport offers professional Microsoft 365 support services in the USA, helping businesses with setup, account administration, licensing, troubleshooting, email configuration, and user training." />
       <meta name="keywords" content="Microsoft 365 Support Services USA, Office 365 Support, Microsoft 365 Helpdesk USA, M365 Troubleshooting, Exchange Online Support, Teams & SharePoint Assistance" />
       <meta name="author" content="GladiuseSport" />
@@ -80,19 +80,24 @@ const page = () => {
       <meta name="twitter:site" content="@GladiuseSport" />
       <meta name="twitter:creator" content="@GladiuseSport" />
       {/* --- END SEO SECTION --- */}
-    <MicrosoftSchema />
-    <main className='bg-blue-50' >
-      <Navbar />
-      <Hero />
-      <WhatWeDo />
-      <M365Services /> 
-      <Tools/>
-      <IndustriesSection/>
-      <CaseStudiesAndIndustries />
-      <MarketDataTables/>
-      <FAQSection />
-      <CTA/>
-    </main>
+
+      <MicrosoftSchema />
+
+      {/* background divs from the script */}
+      <div className="animated-bg"></div>
+      <div className="texture-overlay"></div>
+      <main className='bg-blue-50' >
+        <Navbar />
+        <Hero />
+        <WhatWeDo />
+        <M365Services />
+        <Tools />
+        <IndustriesSection />
+        <CaseStudiesAndIndustries />
+        <MarketDataTables />
+        <FAQSection />
+        <CTA />
+      </main>
     </>
   )
 }

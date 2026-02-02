@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden py-20 text-gray-900">
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-10">
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
             <h1 className="text-5xl md:text-[54px] font-bold text-slate-900 mb-6 leading">

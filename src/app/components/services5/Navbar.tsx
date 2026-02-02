@@ -1,8 +1,20 @@
+import { X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Cloud } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Navbar = () => {
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '#services', label: 'Services' },
+    { href: '#case', label: 'Case Studies' },
+    { href: '#faqs', label: 'FAQ' },
+  ];
+
+
   return (
     /* Added sticky, top-0, and z-50 here to fix the WHOLE header */
     <header className="sticky top-0 z-50 w-full shadow-lg">
@@ -18,26 +30,73 @@ const Navbar = () => {
       </div>
 
       {/* Main Nav - backdrop-blur works best when background is slightly transparent (bg-white/90) */}
+
       <nav className="backdrop-blur-xl bg-white/90 border-b border-blue-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">  
-          <Cloud className="w-10 h-10 fill-black text-black" />
-           <Link
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex items-center gap-2">
+              <Cloud className="w-10 h-10 fill-black text-black" />
+              <Link
                 href="/"
                 className="text-2xl font-bold text-gray-900"
               >
-               Microsoft 365 Support
+                Microsoft 365 Support
               </Link>
-          </div>
-          
-          <div className="hidden md:flex gap-8 items-center font-medium">
-            <a href="#services" className="text-gray-700 hover:text-blue-600 transition">Services</a>
-            <a href="#case" className="text-gray-700 hover:text-blue-600 transition">Case Studies</a>
-            <a href="#faqs" className="text-gray-700 hover:text-blue-600 transition">FAQs</a>
-            <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:shadow-lg transition transform hover:scale-105">
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={'transition text-gray-700 hover:text-blue-600'}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+
+            <Link
+              href="#contact"
+              className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:shadow-lg transition transform hover:scale-105">
               Contact Us
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-gray-700 hover:text-blue-600 transition"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 space-y-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block py-2 transition text-gray-700 hover:text-blue-600`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition text-center"
+              >
+                Contact Us
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
     </header>

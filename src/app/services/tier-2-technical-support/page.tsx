@@ -92,8 +92,13 @@ const page = () => {
       <meta name="twitter:site" content="@GladiuseSport" />
       <meta name="twitter:creator" content="@GladiuseSport" />
       {/* --- END SEO SECTION --- */}
-      
+
       <TierTwoSchema />
+
+      {/* background divs from the script */}
+      <div className="animated-bg"></div>
+      <div className="texture-overlay"></div>
+
       <main className='bg-blue-50'>
         {/* Disclaimer bar */}
         <div className="border-b-2 border-yellow-200 bg-yellow-50 py-2 px-4">

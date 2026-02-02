@@ -59,7 +59,14 @@ export default function Header() {
       <meta name="twitter:image:alt" content="Tier 1 IT Help Desk Services USA" />
       <meta name="twitter:site" content="@GladiuseSport" />
       <meta name="twitter:creator" content="@GladiuseSport" />
+
+
       <TierOneSchema />
+
+      {/* background divs from the script */}
+      <div className="animated-bg"></div>
+      <div className="texture-overlay"></div>
+      
       <nav className="bg-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">

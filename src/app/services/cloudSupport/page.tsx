@@ -7,18 +7,18 @@ import MarketAnalysis from '../../components/services3/MarketAnalysis'
 import CaseStudy from "../../components/services3/CaseStudies"
 import Testimonials from "../../components/services3/Testimonials"
 import FAQ from "../../components/services3/FAQ"
-import Contact from "../../components/services3/Contact" 
+import Contact from "../../components/services3/Contact"
 import CloudSupportSchema from '@/app/components/services3/CloudSupportSchema'
 
 
-const TOOLS: readonly string[] = [ "Microsoft 365",  "Azure",  "Exchange Online", "SharePoint", "Teams", "Power Platform", "Intune","OneDrive","Defender", "PowerShell","Sentinel","Entra ID",] as const;
+const TOOLS: readonly string[] = ["Microsoft 365", "Azure", "Exchange Online", "SharePoint", "Teams", "Power Platform", "Intune", "OneDrive", "Defender", "PowerShell", "Sentinel", "Entra ID",] as const;
 
-const BRANDS: readonly string[] = ["HealthTech", "Pacific Bank","GreenBuild","Summit Legal","Riverside Academy","TechStart Inc",] as const;
+const BRANDS: readonly string[] = ["HealthTech", "Pacific Bank", "GreenBuild", "Summit Legal", "Riverside Academy", "TechStart Inc",] as const;
 const page = () => {
   return (
     <>
-    {/* --- SEO SECTION START --- */}
-    <title>Cloud Support Services USA | Managed Cloud IT Support for Businesses</title>
+      {/* --- SEO SECTION START --- */}
+      <title>Cloud Support Services USA | Managed Cloud IT Support for Businesses</title>
       <meta name="description" content="GladiuseSport delivers cloud support services in the USA, helping businesses manage, monitor, and optimize cloud environments with secure, scalable, and reliable IT solutions." />
       <meta name="keywords" content="Cloud Support Services USA, Managed Cloud Support, Cloud IT Services, Business Cloud Support, AWS Azure Cloud Support, Cloud Infrastructure Management" />
       <meta name="author" content="GladiuseSport" />
@@ -48,53 +48,58 @@ const page = () => {
       <meta name="twitter:site" content="@GladiuseSport" />
       <meta name="twitter:creator" content="@GladiuseSport" />
       {/* --- SEO SECTION END --- */}
-    <CloudSupportSchema/>
-    <Navbar />
-    <Hero />
-    <Services />
-    <section className="bg-white py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-12 text-center text-3xl font-bold text-gray-800 sm:text-4xl">
-          Tools &amp; Technologies
-        </h2>
 
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
-          {TOOLS.map((tool) => (
-            <div
-              key={tool}
-              className="rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 p-6 text-center"
-            >
-              <p className="font-semibold">{tool}</p>
-            </div>
-          ))}
+      <CloudSupportSchema />
+
+      {/* background divs from the script */}
+      <div className="animated-bg"></div>
+      <div className="texture-overlay"></div>
+      <Navbar />
+      <Hero />
+      <Services />
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-12 text-center text-3xl font-bold text-gray-800 sm:text-4xl">
+            Tools &amp; Technologies
+          </h2>
+
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
+            {TOOLS.map((tool) => (
+              <div
+                key={tool}
+                className="rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 p-6 text-center"
+              >
+                <p className="font-semibold">{tool}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-    <Industry />
-    <MarketAnalysis />
-    <CaseStudy />
-    <Testimonials />
+      </section>
+      <Industry />
+      <MarketAnalysis />
+      <CaseStudy />
+      <Testimonials />
 
-     <section className="bg-gray-100 py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h3 className="mb-8 text-center text-2xl font-bold text-gray-800">
-          Trusted by Leading Organizations
-        </h3>
+      <section className="bg-gray-100 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h3 className="mb-8 text-center text-2xl font-bold text-gray-800">
+            Trusted by Leading Organizations
+          </h3>
 
-        <div className="grid grid-cols-2 items-center gap-8 opacity-60 md:grid-cols-4 lg:grid-cols-6">
-          {BRANDS.map((name) => (
-            <div
-              key={name}
-              className="rounded-lg bg-white p-4 text-center font-bold text-gray-700 shadow"
-            >
-              {name}
-            </div>
-          ))}
+          <div className="grid grid-cols-2 items-center gap-8 opacity-60 md:grid-cols-4 lg:grid-cols-6">
+            {BRANDS.map((name) => (
+              <div
+                key={name}
+                className="rounded-lg bg-white p-4 text-center font-bold text-gray-700 shadow"
+              >
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-    <FAQ />
-    <Contact />
+      </section>
+      <FAQ />
+      <Contact />
     </>
   )
 }

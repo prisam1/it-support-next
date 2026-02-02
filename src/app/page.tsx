@@ -44,7 +44,12 @@ export default function Home() {
       <meta name="twitter:site" content="@GladiuseSport" />
       <meta name="twitter:creator" content="@GladiuseSport" />
       {/* --- END SEO SECTION --- */}
+
       <HomeSchema />
+      {/* background divs from the script */}
+      <div className="animated-bg"></div>
+      <div className="texture-overlay"></div>
+
       <Navbar />
       <Hero />
       <WhatWeDo />

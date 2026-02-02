@@ -1,4 +1,4 @@
-import Script from "next/script"; 
+import Script from "next/script";
 import { homeSchemas } from "../schemas/homeSchema";
 
 export default function HomeSchema() {
@@ -10,6 +10,7 @@ export default function HomeSchema() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(schema),
+
           }}
         />
       ))}
