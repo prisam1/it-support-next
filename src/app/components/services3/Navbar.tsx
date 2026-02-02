@@ -1,12 +1,14 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { services } from "../Navbar";
 
 type NavItem = { href: string; label: string };
 
 const NAV_ITEMS: readonly NavItem[] = [
-  { href: "/#services", label: "Services" },
+  // { href: "/#services", label: "Services" },
   { href: "/#why-choose-us", label: "Why Us" },
   { href: "/#case-studies", label: "Case Studies" },
   { href: "/#faq", label: "FAQ" },
@@ -14,6 +16,45 @@ const NAV_ITEMS: readonly NavItem[] = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  // Scroll shadow
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const navLinks = [
+    // { href: '#services', label: 'Services' },
+    { href: '#industries', label: 'Industries' },
+    { href: '#case-studies', label: 'Case Studies' },
+    { href: '#faq', label: 'FAQ' },
+    { href: '#disclaimer', label: 'Disclaimer', special: true }
+  ];
 
   // Close mobile menu when switching to desktop
   useEffect(() => {
@@ -53,6 +94,42 @@ export default function Header() {
 
           {/* Desktop */}
           <div className="hidden items-center space-x-6 md:flex">
+            {/* Services Dropdown */}
+            <div ref={servicesRef} className="relative">
+
+              <button
+                onClick={() => setIsServicesOpen((v) => !v)}
+                className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+                type="button"
+              >
+                Services
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {services.map((service, idx) => (
+                    <Link
+                      key={idx}
+                      href={service.href}
+                      className="flex items-start gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
+                      <div className="mt-1 text-blue-600 group-hover:text-blue-700">{service.icon}</div>
+                      <div>
+                        <div className="font-semibold text-gray-900 group-hover:text-blue-600">{service.title}</div>
+                        <div className="text-sm text-gray-600">{service.description}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
@@ -65,7 +142,7 @@ export default function Header() {
 
             <Link
               href="/#contact"
-              className="rounded-lg bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700"
+              className="rounded-lg bg-blue-600 px-6 py-2 text-white transition hover:bg-blue-700"
             >
               Get Started
             </Link>

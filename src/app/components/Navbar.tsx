@@ -12,36 +12,36 @@ type ServiceItem = {
   href: string;
 };
 
-const services: ServiceItem[] = [
+export const services: ServiceItem[] = [
   {
     icon: <Headphones className="w-5 h-5" />,
     title: "Help Desk Support",
     description: "Tier-1 technical support",
-    href: "/services/tier-1-help-desk",
+    href: "/services/tier-1-help-desk-services-usa",
   },
   {
     icon: <Headphones className="w-5 h-5" />,
     title: "Help Desk Support",
     description: "Tier-2 technical support",
-    href: "/services/tier-2-technical-support",
+    href: "/services/tier-2-help-desk-services-usa",
   },
   {
     icon: <Cloud className="w-5 h-5" />,
     title: "Microsoft 365 Admin",
     description: "Complete M365 management",
-    href: "/services/microsoftAdmin",
+    href: "/services/microsoft-365-support-services-usa",
   },
   {
     icon: <Server className="w-5 h-5" />,
     title: "Cloud Infrastructure",
     description: "AWS, Azure, GCP support",
-    href: "/services/cloudSupport",
+    href: "/services/cloud-support-services-usa",
   },
   {
     icon: <Lock className="w-5 h-5" />,
     title: "VPN & Security",
     description: "Secure network implementation",
-    href: "/services/networkSupport",
+    href: "/services/network-support-services-usa",
   },
 ];
 
@@ -99,7 +99,7 @@ export default function Navbar() {
         <nav className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            < Link href="#">
+            < Link href="/">
               <div className="text-2xl font-bold">
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   IT Support Pro

@@ -9,6 +9,7 @@ import ClientReview from "./components/ClientReview"
 import FAQ from "./components/Faq";
 import Navbar from "./components/Navbar";
 import HomeSchema from "./components/HomeSchema";
+import FloatingCall from "./components/FloatingCall";
 
 export default function Home() {
   return (
@@ -58,8 +59,8 @@ export default function Home() {
       <Industry />
       <MarketAnalysis />
       <ClientReview />
-      <FAQ />
-
+      <FAQ /> 
+      <FloatingCall />
     </>
   );
 }

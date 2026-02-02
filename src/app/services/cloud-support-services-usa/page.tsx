@@ -15,6 +15,7 @@ const TOOLS: readonly string[] = ["Microsoft 365", "Azure", "Exchange Online", "
 
 const BRANDS: readonly string[] = ["HealthTech", "Pacific Bank", "GreenBuild", "Summit Legal", "Riverside Academy", "TechStart Inc",] as const;
 const page = () => {
+  
   return (
     <>
       {/* --- SEO SECTION START --- */}

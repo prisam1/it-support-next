@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Role from "../../components/services1/Role"
@@ -13,13 +13,45 @@ import WhyChooseUs from "../../components/services1/WhyChooseUS"
 import FAQ from "../../components/services1/FAQ"
 import CallToAction from "../../components/services1/CallAction"
 import TierOneSchema from '@/app/components/services1/TierOneSchema';
+import { ChevronDown } from 'lucide-react';
+import { services } from '@/app/components/Navbar';
 
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
+  // Scroll shadow
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+  
   const navLinks = [
-    { href: '#services', label: 'Services' },
+    // { href: '#services', label: 'Services' },
     { href: '#industries', label: 'Industries' },
     { href: '#case-studies', label: 'Case Studies' },
     { href: '#faq', label: 'FAQ' },
@@ -66,13 +98,14 @@ export default function Header() {
       {/* background divs from the script */}
       <div className="animated-bg"></div>
       <div className="texture-overlay"></div>
-      
-      <nav className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white shadow-sm"
+        }`}>
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" >
-              <div className="flex items-center">
+              <div className="text-2xl font-bold">
                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   TechSupport Pro
                 </span>
@@ -80,7 +113,43 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
+              {/* Services Dropdown */}
+              <div ref={servicesRef} className="relative">
+
+                <button
+                  onClick={() => setIsServicesOpen((v) => !v)}
+                  className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
+                  type="button"
+                >
+                  Services
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                {isServicesOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                    {services.map((service, idx) => (
+                      <Link
+                        key={idx}
+                        href={service.href}
+                        className="flex items-start gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        <div className="mt-1 text-blue-600 group-hover:text-blue-700">{service.icon}</div>
+                        <div>
+                          <div className="font-semibold text-gray-900 group-hover:text-blue-600">{service.title}</div>
+                          <div className="text-sm text-gray-600">{service.description}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -93,23 +162,21 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+              {/* CTA Button */}
+              <Link
+                href="/contact"
+                className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
+              >
+                Get Started
+              </Link>
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden text-gray-700 hover:text-blue-600 transition"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
-
-            {/* CTA Button */}
-            <Link
-              href="#contact"
-              className="hidden md:block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition"
-            >
-              Get Started
-            </Link>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-gray-700 hover:text-blue-600 transition"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
 
           {/* Mobile Navigation */}
@@ -120,10 +187,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block py-2 transition ${link.special
-                    ? 'text-red-600 hover:text-red-700 font-semibold'
-                    : 'text-gray-700 hover:text-blue-600'
-                    }`}
+                  className={`block py-2 transition text-gray-700 hover:text-blue-600`}
                 >
                   {link.label}
                 </Link>
@@ -131,14 +195,14 @@ export default function Header() {
               <Link
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition text-center"
+                className="block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition text-center"
               >
                 Get Started
               </Link>
             </div>
           )}
-        </div>
-      </nav>
+        </nav>
+      </header>
 
       {/* Disclaimer Section */}
       <div id="disclaimer" className="bg-yellow-50 border-l-4 border-yellow-400 p-4">

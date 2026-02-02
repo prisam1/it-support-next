@@ -1,7 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
+import Link from "next/link"; 
+import { ChevronDown } from 'lucide-react';
+import { services } from '../Navbar';
 
 type NavItem = { href: string; label: string; className?: string };
 
@@ -15,7 +17,37 @@ const NAV_ITEMS: readonly NavItem[] = [
 
 export default function SecureNetHeader() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
+  // Scroll shadow
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   // Close mobile menu on desktop
   useEffect(() => {
     const onResize = () => {
@@ -47,8 +79,9 @@ export default function SecureNetHeader() {
       </div>
 
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-white shadow-lg">
-        <div className="mx-auto max-w-7xl px-4 py-4">
+      <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white shadow-sm"
+        }`}>
+          <div className="mx-auto max-w-7xl px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Brand */}
             <Link
@@ -61,9 +94,46 @@ export default function SecureNetHeader() {
               SecureNet Pro
             </Link>
 
+ {/* Desktop Navigation */}
+ <div className="hidden md:flex items-center space-x-6">
+              {/* Services Dropdown */}
+              <div ref={servicesRef} className="relative">
+
+                <button
+                  onClick={() => setIsServicesOpen((v) => !v)}
+                  className="flex items-center gap-1 text-gray-700 hover:text-blue-600 transition-colors"
+                  aria-expanded={isServicesOpen}
+                  aria-haspopup="true"
+                  type="button"
+                >
+                  Services
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                {isServicesOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                    {services.map((service, idx) => (
+                      <Link
+                        key={idx}
+                        href={service.href}
+                        className="flex items-start gap-3 px-4 py-3 hover:bg-blue-50 transition-colors group"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        <div className="mt-1 text-blue-600 group-hover:text-blue-700">{service.icon}</div>
+                        <div>
+                          <div className="font-semibold text-gray-900 group-hover:text-blue-600">{service.title}</div>
+                          <div className="text-sm text-gray-600">{service.description}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
             {/* Desktop links */}
-            <div className="hidden items-center space-x-8 md:flex">
-              {NAV_ITEMS.map((item) => (
+               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

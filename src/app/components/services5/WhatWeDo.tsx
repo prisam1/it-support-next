@@ -24,7 +24,7 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <section className="py-20 bg-white border-y border-blue-100">
+    <section id="why-us" className="py-20 bg-white border-y border-blue-100">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-5 text-gray-900">What We Do</h2>
         <p className="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">
