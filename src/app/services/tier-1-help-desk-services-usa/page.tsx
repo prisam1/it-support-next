@@ -15,6 +15,7 @@ import CallToAction from "../../components/services1/CallAction"
 import TierOneSchema from '@/app/components/services1/TierOneSchema';
 import { ChevronDown } from 'lucide-react';
 import { services } from '@/app/components/Navbar';
+import FloatingCall from '@/app/components/FloatingCall';
 
 
 export default function Header() {
@@ -49,7 +50,7 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-  
+
   const navLinks = [
     // { href: '#services', label: 'Services' },
     { href: '#industries', label: 'Industries' },
@@ -303,6 +304,7 @@ export default function Header() {
       <WhyChooseUs />
       <FAQ />
       <CallToAction />
+      <FloatingCall />
     </>
   );
 }

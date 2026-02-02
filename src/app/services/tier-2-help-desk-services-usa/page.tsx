@@ -18,6 +18,7 @@ import CTA from '@/app/components/services2/CTA';
 import TierTwoSchema from '@/app/components/services2/TierTwoSchema';
 import { ChevronDown } from 'lucide-react';
 import { services } from '@/app/components/Navbar';
+import FloatingCall from '@/app/components/FloatingCall';
 
 const page = () => {
   type Industry = {
@@ -279,6 +280,7 @@ const page = () => {
         <Testimonials />
         <FAQ />
         <CTA />
+        <FloatingCall />
       </main>
     </>
   )

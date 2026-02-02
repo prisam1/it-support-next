@@ -15,6 +15,7 @@ import Contact from "../../components/services4/Contact"
 import Disclaimer from "../../components/services4/Disclaimer"
 import { Building2, Hospital, University, GraduationCap, ShoppingCart, Cog, } from "lucide-react";
 import NetworkSupportSchema from '@/app/components/services4/NetworkSupportSchema'
+import FloatingCall from '@/app/components/FloatingCall';
 
 
 const page = () => {
@@ -107,6 +108,7 @@ const page = () => {
       </section>
       <Contact />
       <Disclaimer />
+      <FloatingCall />
     </>
   )
 }

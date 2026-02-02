@@ -11,6 +11,7 @@ import IndustriesSection from '@/app/components/services5/IndustriesSection'
 import Tools from '@/app/components/services5/Tools'
 import CTA from '@/app/components/services5/CTA'
 import MicrosoftSchema from '@/app/components/services5/MicrosoftSchema'
+import FloatingCall from '@/app/components/FloatingCall';
 
 
 const page = () => {
@@ -97,6 +98,7 @@ const page = () => {
         <MarketDataTables />
         <FAQSection />
         <CTA />
+        <FloatingCall />
       </main>
     </>
   )

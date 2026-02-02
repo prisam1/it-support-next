@@ -9,6 +9,7 @@ import Testimonials from "../../components/services3/Testimonials"
 import FAQ from "../../components/services3/FAQ"
 import Contact from "../../components/services3/Contact"
 import CloudSupportSchema from '@/app/components/services3/CloudSupportSchema'
+import FloatingCall from '@/app/components/FloatingCall'
 
 
 const TOOLS: readonly string[] = ["Microsoft 365", "Azure", "Exchange Online", "SharePoint", "Teams", "Power Platform", "Intune", "OneDrive", "Defender", "PowerShell", "Sentinel", "Entra ID",] as const;
@@ -101,6 +102,7 @@ const page = () => {
       </section>
       <FAQ />
       <Contact />
+      <FloatingCall />
     </>
   )
 }

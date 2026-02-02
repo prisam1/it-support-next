@@ -76,7 +76,7 @@ body {
   /* Normal Light Blue Shadow */
   --shadow-blue: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
   --animate-heartbeat: heartbeat 2s ease-in-out infinite;
-  --animate-heartbeat-fast: heartbeat-fast 0.6s ease-in-out infinite;
+  --animate-heartbeat-fast: heartbeat-fast 0.7s ease-in-out infinite;
   --animate-ping: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
