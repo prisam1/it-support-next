@@ -35,18 +35,15 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center gap-2">
+            <Link
+              href="/"
+              className="text-2xl flex items-center gap-2 font-bold text-gray-900"
+            >
               <Cloud className="w-10 h-10 fill-black text-black" />
-              <Link
-                href="/"
-                className="text-2xl font-bold text-gray-900"
-              >
-                Microsoft 365 Support
-              </Link>
-            </div>
-
+              Microsoft 365 Support
+            </Link>
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex gap-8 items-center font-medium">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -56,15 +53,16 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+
+              {/* CTA Button */}
+              <Link
+                href="#contact"
+                className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:shadow-lg transition transform hover:scale-105">
+                Contact Us
+              </Link>
+
             </div>
 
-            {/* CTA Button */}
-
-            <Link
-              href="#contact"
-              className="hidden md:block px-6 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:shadow-lg transition transform hover:scale-105">
-              Contact Us
-            </Link>
 
             {/* Mobile Menu Button */}
             <button
