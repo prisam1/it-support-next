@@ -13,7 +13,7 @@ export default function FloatingCall() {
                     They hide and stop animating when the group is hovered. */}
                 <div className="absolute inset-0 border-2 border-green-400 rounded-full animate-heartbeat group-hover:opacity-0 group-hover:[animation-play-state:paused] transition-all duration-200 pointer-events-none"></div>
 
-                <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-80 group-hover:opacity-0 group-hover:[animation-play-state:paused] transition-all duration-200 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-80 transition-all duration-200 pointer-events-none"></div>
 
                 {/* FLOATING WRAPPER - Only the button and dot move up/down */}
                 <div className="relative flex items-center justify-center w-full h-full animate-float group-hover:[animation-play-state:paused]">
